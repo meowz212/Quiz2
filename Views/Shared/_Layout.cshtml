@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/main")
 
 </head>
 <body>
@@ -30,11 +31,14 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    </header>
+    <div>
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="center bgcl padding-16">
+            <div class="xlarge section">
+                <p>Visit My Social Media!</p>
+            </div>
         </footer>
     </div>
 

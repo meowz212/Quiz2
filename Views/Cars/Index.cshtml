@@ -6,8 +6,7 @@
 
 <h2>Welcome to Car Showroom</h2>
 
-<p>
-    @Html.ActionLink("Add New Car", "Create")
+<p><input type="button" class="buttons button2" value="Add New Car" onclick="location.href='@Url.Action("Create")'" />
 </p>
 <table class="table">
     <tr>
@@ -47,9 +46,10 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit Cars Info", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Car Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Remove Car", "Delete", new { id=item.ID })
+            
+            <input type="button" class="buttons button1" value="Edit Car Info" onclick="location.href='@Url.Action("Edit", new { id = item.ID })'" />
+            <input type="button" class="buttons button2" value="View Car Detail" onclick="location.href='@Url.Action("Details", new { id = item.ID })'" />
+            <input type="button" class="buttons button3" value="Remove Car" onclick="location.href='@Url.Action("Delete", new { id = item.ID })'" />
         </td>
     </tr>
 }
