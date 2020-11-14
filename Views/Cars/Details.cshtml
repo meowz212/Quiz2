@@ -4,12 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details of the Car</h2>
+<div class="paddingbut">
+    <h2>Details of the Car</h2>
+</div>
+
 
 <div>
-    <h4>Car</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="form-horizontal paddingbut">
         <dt>
             @Html.DisplayNameFor(model => model.Type)
         </dt>
@@ -49,10 +51,10 @@
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
-
+        <div class="padding-16">
+            <input type="button" class="btn btn-default" value="Edit Car Details" onclick="location.href='@Url.Action("Edit", new { id = Model.ID })'" />
+            <input type="button" class="btn btn-default" value="Back to list" onclick="location.href='@Url.Action("index", "Cars")'" />
+        </div>
     </dl>
+ 
 </div>
-<p>
-    @Html.ActionLink("Edit Car Details", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to car list", "Index")
-</p>

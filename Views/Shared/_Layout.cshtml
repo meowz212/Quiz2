@@ -3,44 +3,78 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/main")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Jannbo Cars", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Cars Showroom", "Index", "Cars")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="links">
+                        <li>
+                            <a href="@Url.Action("index", "Home")" title="Home" class="links">
+                                <img alt="List View" src="@Url.Content("~/images/janbooz.png")">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Cars Showroom", "Index", "Cars")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
-    </div>
     </header>
-    <div>
-        @RenderBody()
-        <hr />
-        <footer class="center bgcl padding-16">
-            <div class="xlarge section">
-                <p>Visit My Social Media!</p>
+
+    @RenderBody()
+    <footer class="site-footer">
+        <div id="footer" class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <img src="~/images/1146f987-be96-445a-b6de-4a35b4f43390_200x200.png" alt="First slide">
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Social Media</h6>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/meowz212/Quiz2/tree/main/Views/Cars">Janboo's Github</a></li>
+                        <li><a href="https://github.com/rozakcloud">Rozak's Github</a></li>
+                        <li><a href="https://github.com/AnfasaA">Anfasa's Github</a></li>
+                        <li><a href="https://github.com/meowz212">Kinash's Github</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+            <div>
+                <p class="copyright-text text-center">
+                    Copyright &copy; 2020 All Rights Reserved
+                </p>
+            </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

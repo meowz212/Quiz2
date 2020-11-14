@@ -4,7 +4,9 @@
     ViewBag.Title = "Edit Car Information";
 }
 
-<h2>Edit Car Information</h2>
+<div class="paddingbut">
+    <h2>Edit Car Information</h2>
+</div>
 
 
 @using (Html.BeginForm())
@@ -12,7 +14,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Car</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -59,15 +60,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="buttons button1" value="Save" />
+                <input type="submit" class="btn btn-default" value="Save" />
+                <input type="button" class="btn btn-default" value="Back to list" onclick="location.href='@Url.Action("index", "Cars")'" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to car list", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
